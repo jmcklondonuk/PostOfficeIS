@@ -1,7 +1,7 @@
 # Post Office Information System
 
 ## System Requirements
-- Linux OS or Windows 10 with Windows Linux Subsystem (WLS).
+- Linux OS or Windows 10 with Windows Subsystem for Linux (WSL).
 - JDK 11 (OpenJDK or Oracle)
 - Internet connectivity to download Gradle dependencies for build
 
