@@ -1,0 +1,38 @@
+plugins {
+    id 'application'
+    id 'java'
+    id 'idea'
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+}
+
+group 'com.jackmckenzie'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.9
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-dependencies:2.2.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.reflections:reflections:0.9.12'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.6.0'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+application {
+    mainClassName = 'com.jackmckenzie.frontend.PostOfficeApp'
+}
+
+run {
+    standardInput = System.in
+}
