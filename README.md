@@ -21,33 +21,8 @@ The contract is fully specified in requirements including supported inputs and o
 Note: every 2 minutes, after the user hits enter, it lists parcels in the system.
 
 ## Implementation notes
-Java doesn't implement a ReadKey capability. 
-It only implements "read line". It is implemented 
-by delegating control to the native OS read line 
-function.
+Java doesn't implement a ReadKey capability, so parcel listing is intentionally outputted after a user command is entered.
+This means the system also won't repeat itself when the user does not take any action. Mainly, user input will never get 
+inconsistent or messy, so an errorneous input is prevented.
 
-Once the user starts typing, we do not have 
-any control until he hits enter.
-
-While outputting a list of parcels is possible 
-at the same time as the user is typing a command, 
-it messes up the screen output, so that his 
-command becomes unreadable (interrupted by 
-our output).
- 
-To avoid the screen getting messed up,  I have 
-implemented parcel listing intentionally synchronously
- after the user command is entered.
-
-Better solutions are possible only when 
-1. I would implement a JNI function (Java Native Interface)
-in C which would do native-OS call of ReadKey which 
-is probably an overkill for this test.
-
-2. I would create a graphical application 
-such as JavaFX where the ReadKey event obviously works.
-
-3. Or, I would create a web or mobile application. 
-
-ReadKey simply doesn't exist in Java for console applications, 
-as it waits until return.
+An option to add ReadKey into Java exists with JNI (Java Native Interface), i.e. write a quick C implementation. It is platform specific. Another option is to use GUI (i.e. JavaFX), however the requirement for a command line app. 
