@@ -18,7 +18,7 @@ PostOfficeIS is a simple Information System for Post Office.
 
 The contract is fully specified in requirements including supported inputs and outputs.
 
-Note: every 2 minutes, after the user hits enter, it lists parcels in the system.
+Note: every minute, after the user hits enter, it lists parcels in the system.
 
 ## Implementation notes
 Java doesn't implement a ReadKey capability, so parcel listing is intentionally outputted after a user command is entered.
