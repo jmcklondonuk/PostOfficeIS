@@ -30,7 +30,7 @@ public class CommandLineArguments {
 
     public boolean process(ApplicationArguments args) {
         Set<String> options = new HashSet<>(Options.values().length);
-        Arrays.stream(Options.values()).forEach(option -> options.add(option.name().toLowerCase()));
+        Arrays.stream(Options.values()).forEach(option -> options.add(option.name()));
 
         if (args.getSourceArgs().length > 2 || !args.getNonOptionArgs().isEmpty() || !options.containsAll(args.getOptionNames())) {
             System.err.println("Invalid arguments! Supported are --prices=prices.txt --parcels=list.txt");
