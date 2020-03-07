@@ -1,7 +1,7 @@
 # Post Office Information System
 
 ## System Requirements
-- Linux OS or Windows 10 with Windows Subsystem for Linux (WSL).
+- Linux OS or Windows 10 with Windows Subsystem for Linux (WSL)
 - JDK 11 (OpenJDK or Oracle)
 - Internet connectivity to download Gradle dependencies for build
 
@@ -23,4 +23,4 @@ Note: every minute, after the user hits enter, it lists parcels in the system.
 ## Implementation notes
 Java doesn't implement a ReadKey capability. Due to this limitation, parcels are listed only after the user enters a new command. If the user does not enter commands, parcels are not listed. If we printed a list of parcels at any time, we would have an inconsistent command line, i.e. overwritten by the output.
 
-An option to add ReadKey into Java exists with JNI (Java Native Interface), i.e. write a quick C implementation. It is platform specific. Another option is to use a GUI (i.e. JavaFX), however the requirement is for a command line app. 
+An option to add ReadKey into Java exists with JNI (Java Native Interface), i.e. write a quick C implementation that is platform specific. Another option is to use a GUI such as JavaFX, however the requirement is a command line app. 
